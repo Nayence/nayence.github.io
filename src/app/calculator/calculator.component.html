@@ -1,0 +1,27 @@
+<div class="calculator-container">
+    <h1>Calcul Simple</h1>
+    <form [formGroup]="calculatorForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="number1">Premier nombre </label>
+        <input type="number" id="number1" formControlName="number1" required />
+      </div>
+  
+      <div class="form-group">
+        <label for="number2">Deuxième nombre </label>
+        <input type="number" id="number2" formControlName="number2" required />
+      </div>
+  
+      <div class="form-group">
+        <label for="operation">L'opération à effectuer </label>
+        <select id="operation" formControlName="operation" required>
+          <option value="add">Addition</option>
+          <option value="subtract">Soustraction</option>
+          <option value="multiply">Multiplication</option>
+          <option value="divide">Division</option>
+        </select>
+      </div>
+  
+      <button type="submit">Calculer</button>
+    </form>
+    <p *ngIf="result !== null">Resultat: {{ result }}</p>
+  
